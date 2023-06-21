@@ -11,5 +11,16 @@ class Program:
             bool: If program is running or not
         """
         
-        for program in psutil.process_iter():
-            print(program.name())
+        if task_name.endswith(".exe"):
+            for program in psutil.process_iter():
+                if program.name() == task_name:
+                    return True
+                
+            return False
+                
+        else:
+            for program in psutil.process_iter():
+                if program.name() == f"{task_name}.exe":
+                    return True
+                
+            return False
