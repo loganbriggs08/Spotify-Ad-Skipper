@@ -27,7 +27,16 @@ class Program:
                 
             return False
         
-    def information(task_name: str) -> Union[None, object]:        
+    def information(task_name: str) -> Union[None, object]:
+        """Get information about a process.
+
+        Args:
+            task_name (str): The name of the process you want the information on.
+
+        Returns:
+            Union[None, object]: Return None if process not found else an object.
+        """
+        
         if task_name.endswith(".exe"):
             for program in psutil.process_iter():
                 if program.name() == task_name:
