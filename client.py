@@ -13,7 +13,7 @@ class Client:
             if program_object == None:
                 Logging.error(f"{process} couldn't be found in the process list..")
             else:
-                print(program_object.name())
+                Logging.success(f"{program_object.name()} has been found sucessfully..")
         else:
             Logging.error(f"{process} couldn't be found in the process list..")
 
