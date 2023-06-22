@@ -53,7 +53,16 @@ class Program:
         
     def kill(task_name: str) -> bool:
         try:
-            
-            return True 
+            if task_name.endswith(".exe"):
+                for program in psutil.process_iter():
+                    if program.name() == task_name:
+                        program.kill(); return True
+                    
+                return False
+                    
+            else:
+                for program in psutil.process_iter():
+                    if program.name() == f"{task_name}.exe":
+                        program.kill(); return True 
         except:
             return False
