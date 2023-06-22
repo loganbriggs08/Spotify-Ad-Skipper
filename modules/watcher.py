@@ -6,7 +6,7 @@ from modules import Program, Logging
 
 class Watcher:
     def start() -> None:
-        """Start watching for advertisements to close and then reopen spotify."""
+        """Start watching for advertisements to close and then re-open spotify."""
         
         while True:
             for window in pygetwindow.getAllWindows():                
