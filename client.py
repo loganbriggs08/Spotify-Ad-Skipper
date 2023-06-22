@@ -8,7 +8,9 @@ class Client:
         is_running: bool = Program.is_running(task_name=process)
         
         if is_running == True:
-            print("Spotify is running..")
+            program_object: object = Program.information(task_name=process)
+            
+            
         else:
             Logging.error(f"{process} couldn't be found in the process list..")
 
