@@ -1,3 +1,4 @@
+import os
 import time
 import pygetwindow
 
@@ -12,5 +13,10 @@ class Watcher:
                 if window.title == "Advertisement":
                     if Program.is_running("Spotify.exe") == True:
                         Logging.success("Spotify.exe Process found with running AD..")
-                
+                        
+                        if Program.kill("Spotify.exe") == True:
+                            Logging.success("Spotify.exe process has been killed successfully."); os.system('cmd /k "spotify.exe"')
+                        else:
+                            Logging.error("Failed to kill Spotify.exe process..")
+
                 time.sleep(0.5)
