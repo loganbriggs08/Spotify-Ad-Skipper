@@ -1,7 +1,7 @@
 import time
 import pygetwindow
 
-from modules import Program
+from modules import Program, Logging
 
 class Watcher:
     def start(self) -> None:
@@ -10,6 +10,7 @@ class Watcher:
         while True:
             for window in pygetwindow.getAllWindows():
                 if window.title == "Advertisement":
-                    print("ad is running?")
+                    if Program.is_running("Spotify.exe") == True:
+                        Logging.success("Spotify.exe Process found with running AD..")
                 
-                time.sleep(1)
+                time.sleep(0.5)
