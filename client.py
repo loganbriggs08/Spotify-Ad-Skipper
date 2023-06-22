@@ -1,5 +1,5 @@
 from typing import Union 
-from modules import Program, Logging
+from modules import Program, Logging, Watcher
 
 class Client:
     def __init__(self, process: str) -> None:
@@ -14,6 +14,7 @@ class Client:
                 Logging.error(f"{process} couldn't be found in the process list..")
             else:
                 Logging.success(f"{program_object.name()} has been found sucessfully..")
+                Watcher.start()
         else:
             Logging.error(f"{process} couldn't be found in the process list..")
 
