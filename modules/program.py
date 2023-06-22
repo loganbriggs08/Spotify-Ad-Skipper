@@ -51,3 +51,9 @@ class Program:
                 
             return None
         
+    def kill(task_name: str) -> bool:
+        try:
+            
+            return True 
+        except:
+            return False
