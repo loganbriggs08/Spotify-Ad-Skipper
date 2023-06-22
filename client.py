@@ -1,8 +1,6 @@
 from typing import Union 
 from modules import Program
 
-error_type: type = Union[None, dict[any]]
-
 class Client:
     def __init__(self, process: str) -> error_type:
         self.process: str = process
