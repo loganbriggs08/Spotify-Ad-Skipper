@@ -10,7 +10,10 @@ class Client:
         if is_running == True:
             program_object: object = Program.information(task_name=process)
             
-            
+            if program_object == None:
+                Logging.error(f"{process} couldn't be found in the process list..")
+            else:
+                print(program_object.name())
         else:
             Logging.error(f"{process} couldn't be found in the process list..")
 
