@@ -1,5 +1,6 @@
 import os
 import time
+import pyautogui
 import pygetwindow
 
 from modules import Program, Logging
@@ -15,7 +16,13 @@ class Watcher:
                         Logging.success("Spotify.exe Process found with running AD..")
                         
                         if Program.kill("Spotify.exe") == True:
-                            Logging.success("Spotify.exe process has been killed successfully."); os.system('cmd /k "spotify.exe"')
+                            Logging.success("Spotify.exe process has been killed successfully.")
+                            try:
+                                os.system('cmd /k "spotify.exe"'); pyautogui.press('playpause')
+                                
+                                Logging.success("Spotify.exe has been started again and is now playing..")
+                            except:
+                                Logging.error("Spotify.exe couldn't be started again..")
                         else:
                             Logging.error("Failed to kill Spotify.exe process..")
                             
