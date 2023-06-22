@@ -27,7 +27,7 @@ class Program:
                 
             return False
         
-    def information(task_name: str) -> Union[None, object]:
+    def information(task_name: str) -> Union[None, object]:        
         if task_name.endswith(".exe"):
             for program in psutil.process_iter():
                 if program.name() == task_name:
